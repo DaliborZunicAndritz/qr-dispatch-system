@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataDetails } from 'src/app/models/data-details';
 import { DataService } from 'src/app/services/data.service';
 
@@ -12,7 +12,7 @@ export class MainDataComponent implements OnInit {
 
   dataDetails = {} as DataDetails
 
-  constructor(private route: ActivatedRoute, private dataService: DataService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private dataService: DataService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe({
@@ -25,6 +25,9 @@ export class MainDataComponent implements OnInit {
               this.dataDetails = response;
             }
           });
+        }
+        else {
+          this.router.navigate(["/", "PageNotFoundComponent"]);
         }
       }
     });

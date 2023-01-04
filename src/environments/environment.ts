@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseApiUrl: "ApiUrl"
+  baseApiUrl: "http://localhost:3000/api/teams"
 };
 
 /*

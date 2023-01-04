@@ -13,6 +13,6 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getDataByGuid(id: string): Observable<DataDetails> {
-    return this.http.get<DataDetails>(`${this.baseApiUrl}/api/DataDetails/${id}`)
+    return this.http.get<DataDetails>(`${this.baseApiUrl}/${id}`)
   }
 }
