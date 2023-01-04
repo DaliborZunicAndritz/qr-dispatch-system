@@ -78,6 +78,10 @@
               "browserTarget": "qr-dispatch-system:build:development"
             }
           },
+          "options": {
+            "browserTarget": "my-app:build",
+            "proxyConfig": "proxy.conf.json"
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {

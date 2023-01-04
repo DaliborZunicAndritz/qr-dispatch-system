@@ -23,6 +23,8 @@ export class MainDataComponent implements OnInit {
           this.dataService.getDataByGuid(id).subscribe({
             next: (response) => {
               this.dataDetails = response;
+              console.log(response);
+              
             }
           });
         }
