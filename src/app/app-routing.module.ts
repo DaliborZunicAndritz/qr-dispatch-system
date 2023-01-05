@@ -4,10 +4,8 @@ import { MainDataComponent } from './components/main-data/main-data.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: ':id', component: MainDataComponent },
-  {
-    path: '**', component: PageNotFoundComponent
-  }
+  { path: 'not-found', component: PageNotFoundComponent },
+  { path: ':id', component: MainDataComponent }
 
 ];
 

@@ -18,18 +18,19 @@ export class MainDataComponent implements OnInit {
     this.route.paramMap.subscribe({
       next: (params) => {
         const id = params.get("id");
+        
 
         if (id) {
           this.dataService.getDataByGuid(id).subscribe({
             next: (response) => {
-              this.dataDetails = response;
-              console.log(response);
-              
+                this.dataDetails = response;
+                console.log(response);
+                
+            },
+            error: (error) => {
+              this.router.navigate(['/', 'not-found']);
             }
           });
-        }
-        else {
-          this.router.navigate(["/", "PageNotFoundComponent"]);
         }
       }
     });
